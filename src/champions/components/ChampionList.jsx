@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { ChampionCard } from './ChampionCard';
 import { getChampionsByRegion } from '../helpers';
 
 export const ChampionList = ({ region }) => {
@@ -8,9 +9,10 @@ export const ChampionList = ({ region }) => {
      <div className='row rows-col-1 row-cols-md-3 g-3'>
           {
                champions.map(champion => (
-                    <li key={ champion.id }>
-                         { champion.name }
-                    </li>
+                    <ChampionCard 
+                         key={ champion.id }
+                         { ...champion }
+                    />
                ))
           }
      </div>
