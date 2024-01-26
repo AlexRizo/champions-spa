@@ -6,7 +6,7 @@ export const ChampionsApp = () => {
     return (
         <>
             <Navbar/>
-
+            
             <div className='container'>
                 <Outlet/>
             </div>

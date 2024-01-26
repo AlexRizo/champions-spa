@@ -1,6 +1,6 @@
 import { ChampionsApp } from "../ChampionsApp";
 import { Login } from "../auth";
-import { Noxus, Demacia, Search, Champion } from "../champions";
+import { Noxus, Demacia, Search, Champion, Home } from "../champions";
 
 const Router = [
     {
@@ -8,10 +8,11 @@ const Router = [
         element: <ChampionsApp/>,
         errorElement: <h1>404</h1>,
         children: [
-            { path: 'noxus', element: <Noxus className="container"/> },
+            { path: '/', element: <Home /> },
+            { path: 'noxus', element: <Noxus /> },
             { path: 'demacia', element: <Demacia /> },
             { path: 'search', element: <Search /> },
-            { path: 'champion', element: <Champion /> },
+            { path: 'champion/:id/:name', element: <Champion /> },
         ]
     },
     {

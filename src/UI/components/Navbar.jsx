@@ -23,7 +23,7 @@ export const Navbar = () => {
 
                     <NavLink 
                         className={ ({ isActive }) => `nav-item nav-link ${ isActive ? 'active' : '' }` } 
-                        to="/Noxus"
+                        to="/noxus"
                     >
                         Noxus
                     </NavLink>
