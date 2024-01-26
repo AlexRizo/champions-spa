@@ -36,7 +36,7 @@ export const Champion = () => {
                <div className="col-5">
                     <h2>{ champion.name }</h2>
                     <ul className="list-group list-group-flush">
-                         <li className="list-group-item"><b>Nombre: </b>{ champion.alias }</li>
+                         <li className="list-group-item"><b>Alias: </b>{ champion.alias }</li>
                          <li className="list-group-item"><b>Rol: </b>{ champion.role }</li>
                          <li className="list-group-item"><b>Región: </b>{ champion.region }</li>
                     </ul>
