@@ -23,7 +23,7 @@ export const ChampionCard = ({
      const championImage = region === 'Noxus' ? `/assets/champions/noxus/${ image_name }` : `/assets/champions/demacia/${ image_name }`;
      
      return (
-          <div className="col col-md-4 col-sm-7 animate__animated animate__fadeIn">
+          <div className="col col-md-4 col-sm-7 animate__animated animate__fadeIn mb-1">
                <div className="card card-image-width">
                     <img src={ championImage } className="card-img-top" alt={ name }/>
                     <div className="card-body">

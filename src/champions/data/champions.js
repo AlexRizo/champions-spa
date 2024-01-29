@@ -72,6 +72,15 @@ export const champions = [
           image_name: 'Mordekaiser.jpg'
      },
      {
+          id: 30,
+          name: 'Rell',
+          alias: 'La Doncella de Hierro',
+          role: 'Tanque',
+          region: 'Noxus',
+          phrase: 'Forja tu corazón en algo duro. Inquebrantable',
+          image_name: 'Rell.jpg'
+     },
+     {
           id: 9,
           name: 'Riven',
           alias: 'La Desterrada',

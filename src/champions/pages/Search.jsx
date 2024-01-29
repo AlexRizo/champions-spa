@@ -3,22 +3,30 @@ import { useForm } from "../../hooks/useForm";
 import { ChampionCard } from "../components";
 
 import queryString from 'query-string';
+import { getChampionsByName } from "../helpers";
 
 export const Search = () => {
      const navigate = useNavigate();
 
-     const { champion = '' } = queryString.parse(location.search);
+     const { query = '' } = queryString.parse(location.search);
 
      const { searchChampion, onInputChange } = useForm({
-          searchChampion: ''
+          searchChampion: query
      });
+
+     const champions = getChampionsByName(query);
+
+     //? Cuando se escribe un ternario sin un return excplicito, 
+     //? este regresará verdadero o falso, dependiendo de la condición;
+     const showSearch = (query.length === 0);
+     const showError = (query.length > 0) && champions.length === 0;
 
      const onSearchSubmit = (e) => {
           e.preventDefault();
 
-          if (searchChampion.trim().length <= 1) return;
+          if (searchChampion.trim().length < 1) return;
 
-          navigate(`?champion=${ searchChampion }`);
+          navigate(`?query=${ searchChampion }`);
      }
      
      return (
@@ -44,21 +52,22 @@ export const Search = () => {
                          </form>
                     </div>
                     
-                    <div className="col-7">
+                    <div className="col-7 row">
                          <h4>Resultados:</h4>
                          <hr />
 
-                         <div className="alert alert-primary">
-                              Buscar un campeón
-                         </div>
+                         <div className="alert alert-primary" style={ { display: showSearch ? '' : 'none' } }>Buscar un campeón</div>
 
-                         <div className="alert alert-danger">
-                              No se encontraron resultados para <b>{ champion }</b>
-                         </div>
+                         <div className="alert alert-danger" style={ { display: showError ? '' : 'none' } }>No se encontraron resultados para <b>{ query }</b></div>
 
-                         {/* <ChampionCard>
-                              
-                         </ChampionCard> */}
+                         {
+                              champions.map(champion => (
+                                        <ChampionCard 
+                                             key={ champion.id }
+                                             { ...champion }
+                                        />
+                              ))
+                         }
                     </div>
                </div>
           </>
