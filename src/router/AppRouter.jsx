@@ -1,11 +1,17 @@
 import { ChampionsApp } from "../ChampionsApp";
 import { Login } from "../auth";
 import { Noxus, Demacia, Search, Champion, Home } from "../champions";
+import { PrivateRoute } from "./PrivateRoute";
+import { PublicRoute } from "./PublicRoute";
 
 const Router = [
     {
         path: '/',
-        element: <ChampionsApp/>,
+        element: (
+            <PrivateRoute>
+                <ChampionsApp/>
+            </PrivateRoute>
+        ),
         errorElement: <h1>404</h1>,
         children: [
             { path: '/', element: <Home /> },
@@ -17,7 +23,11 @@ const Router = [
     },
     {
         path: 'login',
-        element: <Login />,
+        element: (
+            <PublicRoute>
+                <Login />
+            </PublicRoute>
+        ),
         errorElement: <h1>404</h1>,
     },
 ];
