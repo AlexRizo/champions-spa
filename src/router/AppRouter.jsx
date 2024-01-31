@@ -1,6 +1,7 @@
 import { ChampionsApp } from "../ChampionsApp";
 import { Login } from "../auth";
 import { Noxus, Demacia, Search, Champion, Home } from "../champions";
+import { ErrorNotFoundPage } from "../errors/ErrorNotFoundPage";
 import { PrivateRoute } from "./PrivateRoute";
 import { PublicRoute } from "./PublicRoute";
 
@@ -12,7 +13,7 @@ const Router = [
                 <ChampionsApp/>
             </PrivateRoute>
         ),
-        errorElement: <h1>404</h1>,
+        errorElement: <ErrorNotFoundPage />,
         children: [
             { path: '/', element: <Home /> },
             { path: 'noxus', element: <Noxus /> },
@@ -28,7 +29,7 @@ const Router = [
                 <Login />
             </PublicRoute>
         ),
-        errorElement: <h1>404</h1>,
+        errorElement: <ErrorNotFoundPage />,
     },
 ];
 
