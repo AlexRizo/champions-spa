@@ -20,7 +20,7 @@ export const ChampionCard = ({
      image_name,
 }) => {
 
-     const championImage = region === 'Noxus' ? `/assets/champions/noxus/${ image_name }` : `/assets/champions/demacia/${ image_name }`;
+     const championImage = region === 'Noxus' ? `/champions/noxus/${ image_name }` : `/champions/demacia/${ image_name }`;
      
      return (
           <div className="col col-md-4 col-sm-7 animate__animated animate__fadeIn mb-1">
