@@ -5,7 +5,7 @@ import { ErrorNotFoundPage } from "../errors/ErrorNotFoundPage";
 import { PrivateRoute } from "./PrivateRoute";
 import { PublicRoute } from "./PublicRoute";
 
-const Router = [
+export const AppRouter = [
     {
         path: '/',
         element: (
@@ -32,5 +32,3 @@ const Router = [
         errorElement: <ErrorNotFoundPage />,
     },
 ];
-
-export default Router;

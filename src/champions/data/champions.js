@@ -60,7 +60,7 @@ export const champions = [
           role: 'Asesino',
           region: 'Noxus',
           phrase: 'Una rosa no puede crecer en la oscuridad. Se muere, y la oscuridad crece...',
-          image_name: 'LeBlanc.jpg'
+          image_name: 'Leblanc.jpg'
      },
      {
           id: 8,
